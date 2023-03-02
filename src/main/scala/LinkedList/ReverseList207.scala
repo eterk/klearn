@@ -5,11 +5,6 @@ package LinkedList
 object ReverseList207 {
 
 
-  class ListNode(_x: Int = 0, _next: ListNode = null) {
-    var next: ListNode = _next
-    var x: Int = _x
-  }
-
   def apply(head: ListNode): ListNode = {
     s2(head)
   }
@@ -48,26 +43,8 @@ object ReverseList207 {
     newHead
   }
 
-  def main(args: Array[String]): Unit = {
-    val l5 = new ListNode(5, null)
-    val l4 = new ListNode(4, l5)
-    val l3 = new ListNode(3, l4)
-    val l2 = new ListNode(2, l3)
-    val l1 = new ListNode(1, l2)
 
 
-    def show(r: ListNode): Unit = {
-      println(r.x)
-      if (r.next != null) {
-        show(r.next)
-      }
-    }
-
-    val r = ReverseList207(l1)
-    show(r)
-
-
-  }
 
 }
 
