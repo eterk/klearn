@@ -1,5 +1,5 @@
 package org.eter.klearn
-package LinkedList
+package stack
 
 object MinStack155 {
 
@@ -97,4 +97,3 @@ object MinStack155 {
   }
 
 }
-
