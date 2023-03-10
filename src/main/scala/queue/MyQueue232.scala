@@ -6,6 +6,14 @@ import scala.collection.mutable
 object MyQueue232 {
 
   //在做此题时我一心想在push 阶段完成整个队列（把新加入的元素移动到栈低）的功能，后来发现 可以在其他部分进行后续操作
+  /**
+   * 整个设计原理类似于两桶空羽毛球桶（s1,s2） ，不断给羽毛球桶里放入羽毛球，为了每次能拿到最早放入的羽毛球
+   * push 放羽毛球时，把羽毛球都放在(push)s1,
+   * pop  取羽毛球时，先检查 s2 有没有球，如果没有球，就检查s1 有没有球，s1 ,有球的话，就把s1的 倒入s2, 然后取走s2最上面的
+   * top 逻辑和 pop 类似，只是看看
+   * empty s1 s2 都为空就是true
+   * size s1 和 s2 的羽毛球数之和
+   */
   class MyQueue() {
 
     private val s1 = scala.collection.mutable.Stack.empty[Int]

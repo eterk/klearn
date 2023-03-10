@@ -28,29 +28,13 @@ object TrappingRainWater42 {
     r
   }
 
-  def s2(heightReverse: Array[Int]): Int = {
-    // 开始位置
-    val height = heightReverse.reverse
-    var startIndex = 0
-    var short = 0
-    var r = 0
-    while (startIndex < height.length) {
-      var i = startIndex + 1
-      while (i < height.length) {
-        if (height(i) >= height(startIndex)) {
-          short = Math.min(height(i), height(startIndex))
-          val increase = short * (i - startIndex - 1) - height.slice(startIndex + 1, i).sum
-          println(s"$short $startIndex --> $i : $increase " + height.slice(startIndex + 1, i).mkString(","))
-          r += increase
-          startIndex = i
-        }
-        i += 1
-      }
-      startIndex += 1
-    }
-    r
-  }
 
+  /**
+   * 对于一个柱状图，遍历每一个横坐标，
+   * 使用栈来存储当前的索引
+   * 当遇到下个位置的柱子高于前一个的柱子的时候
+   * 开始遍历栈，每次只计算i-2到i之间能存储的水量无视更前面的高柱子带来的溢出值*
+   */
   def s3(height: Array[Int]): Int = {
     import scala.collection.mutable.Stack
     val stack = Stack[Int]() // 创建一个栈，用来存放数组的索引
@@ -72,7 +56,8 @@ object TrappingRainWater42 {
     }
     ans // 返回结果
   }
-// 效率高，但是不太懂
+
+  // 效率高，但是不太懂
   def s4(height: Array[Int]): Int = {
     import scala.math.max
     def helper(l: Int, r: Int, level: Int, rst: Int): Int = {
@@ -87,17 +72,20 @@ object TrappingRainWater42 {
         }
       }
     }
-    helper(0,height.length-1,-1,0) // 初始时，左右指针分别在数组两端，水平线和结果为-1（任意负数即可）
+
+    helper(0, height.length - 1, -1, 0) // 初始时，左右指针分别在数组两端，水平线和结果为-1（任意负数即可）
   }
+
+
 
 
   def main(args: Array[String]): Unit = {
 
     println(s3(Array(4, 2, 0, 3, 2, 5)))
     println(s4(Array(4, 2, 0, 3, 2, 5)))
-//    println(s1(Array(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1)))
-//    println(s2(Array(4, 2, 3)))
-//    println(s3(Array(6, 4, 2, 0, 3, 2, 0, 3, 1, 4, 5, 3, 2, 7, 5, 3, 0, 1, 2, 1, 3, 4, 6, 8, 1, 3)))
+    //    println(s1(Array(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1)))
+    //    println(s2(Array(4, 2, 3)))
+    //    println(s3(Array(6, 4, 2, 0, 3, 2, 0, 3, 1, 4, 5, 3, 2, 7, 5, 3, 0, 1, 2, 1, 3, 4, 6, 8, 1, 3)))
 
   }
 }

@@ -6,6 +6,17 @@ class ListNode(var _x: Int = 0) {
   var next: ListNode = _
   var x: Int = _x
 
+  def size: Int ={
+    var cur=this
+    var i=1
+    while (cur.next!=null){
+      i +=1
+      cur=cur.next
+    }
+    i
+  }
+
+
   override def toString: String = {
     if (next != null) {
       x + "," + next.toString
