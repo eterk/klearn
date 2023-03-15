@@ -2,7 +2,7 @@ name := "klearn"
 
 version := "0.1"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.8"
 
 idePackagePrefix := Some("org.eter.klearn")
 
