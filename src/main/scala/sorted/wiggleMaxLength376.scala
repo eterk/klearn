@@ -47,8 +47,8 @@ object wiggleMaxLength376 {
   def main(args: Array[String]): Unit = {
 
     //    println(apply(Array(1, 7, 4, 9, 2, 5)) == 6)
-//    16, -7, 3, -3, 6, -8
-//    println(apply(Array(1, 17, 5, 10, 13, 15, 10, 5, 16, 8)) == 7)
+    //    16, -7, 3, -3, 6, -8
+    //    println(apply(Array(1, 17, 5, 10, 13, 15, 10, 5, 16, 8)) == 7)
     //    println(apply((1 to 9).toArray) == 2)
   }
 }
