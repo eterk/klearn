@@ -2,7 +2,7 @@ name := "klearn"
 
 version := "0.1"
 
-scalaVersion := "2.13.8"
+scalaVersion := "2.13.12"
 
 idePackagePrefix := Some("org.eter.klearn")
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
