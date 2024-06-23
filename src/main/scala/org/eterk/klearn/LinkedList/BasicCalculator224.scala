@@ -66,7 +66,8 @@ object BasicCalculator224 {
 
     cac(expr, 0)
   }
-  def s2(s:String):Int={
+
+  def s2(s: String): Int = {
     val stack = scala.collection.mutable.Stack[Int]() // 创建一个栈来存储之前的结果和符号
     var sign = 1 // 初始化符号为正数
     var res = 0 // 初始化结果为0
