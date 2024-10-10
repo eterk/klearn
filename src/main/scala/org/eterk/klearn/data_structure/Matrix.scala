@@ -1,4 +1,4 @@
-package org.eterk.klearn
+package org.eterk.klearn.data_structure
 
 trait Matrix {
   def apply(row: Int, col: Int): Int
